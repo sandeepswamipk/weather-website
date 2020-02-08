@@ -18,7 +18,19 @@ weatherForm.addEventListener('submit', function(e){
         return;
     }
 
-    fetch('http://localhost:3000/weather?address='+ address).then(function(response){
+    /*fetch('http://localhost:3000/weather?address='+ address).then(function(response){
+        response.json().then(function(data){        
+            if(data.error){
+                console.log(data.error)
+            } else{
+                console.log(data.location);
+                messageOne.textContent = data.location;
+                messageTwo.textContent = data.forcast;
+            }
+        });
+    });*/
+
+    fetch('/weather?address='+ address).then(function(response){
         response.json().then(function(data){        
             if(data.error){
                 console.log(data.error)
